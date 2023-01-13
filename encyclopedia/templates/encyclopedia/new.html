@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Add New Entry
+{% endblock %}
+
+{% block body %}
+
+<form action="{% url 'wiki:new_page' %}" method="POST">
+    {% csrf_token %}
+    <h2><label for="xd">Title</label></h2>
+    <input type="text" name="title" id="xd" placeholder="Title">
+    <h2><label for="peepo">New Data</label></h2>
+    <textarea style="height: 50vh;" id="peepo" name="content" placeholder="Write the new data here"></textarea>
+    <br>
+    <input type="submit" value="Save" class="btn btn-primary">
+</form>
+{% endblock %}

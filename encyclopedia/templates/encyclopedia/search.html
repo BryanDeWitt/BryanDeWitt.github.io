@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h2>Searchs</h2>
+        <ul>
+            {% for entry in recomendation %}
+            <li><a href="{% url 'wiki:page' title=entry %}">{{ entry }}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}
